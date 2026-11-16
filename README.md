@@ -1,10 +1,12 @@
 # Adaptive 3D Bin Packing
 
-**Do conjunto de itens à solução em 3D: heurísticas, busca estocástica e experimentos reproduzíveis.**
+**Empacotamento 3D, aprendizado de desempenho e configuração adaptativa de metaheurísticas.**
 
-Plataforma experimental para o **3D Bin Packing offline**: posicionar itens retangulares em caixas idênticas, sem sobreposição, buscando reduzir o número de caixas. Implementação em Python com core C++ opcional, API FastAPI e interface React/Three.js.
+Plataforma experimental para investigar **3D Bin Packing offline** e **configuração automática de algoritmos**. O problema de empacotamento consiste em posicionar itens retangulares em caixas idênticas, sem sobreposição, buscando reduzir o número de caixas.
 
-[Demonstração](#demonstração) · [Executar](#executar-localmente) · [Como funciona](#como-funciona) · [Estado científico](docs/status.md) · [Guia de uso](docs/usage.md)
+O sistema integra um solver SA/Extreme Points, **GPR para modelar desempenho**, **EGO clássico e contextual para orientar configurações**, comparação com **SMAC3 e irace**, execução paralela e campanhas com avaliação estatística. A aplicação reúne Python, core C++ opcional, FastAPI, SQLite e uma interface React/Three.js.
+
+[Demonstração](#demonstração) · [Executar](#executar-localmente) · [Como funciona](#como-funciona) · [GPR e EGO](#aprendizado-e-configuração-com-gpr-e-ego) · [Experimentos](#o-que-a-aba-experimentos-compara) · [Estado científico](docs/status.md) · [Guia de uso](docs/usage.md)
 
 ## Demonstração
 
@@ -21,7 +23,9 @@ A captura mostra uma execução real da versão 0.3.0, com 8 buscas em 4 workers
 - **Restrições:** rotações ortogonais permitidas, distância mínima entre pares, peso total por caixa e proporção mínima de apoio da base.
 - **Execução:** core Python ou C++, multi-start e processos paralelos. Parallel tempering e cooperação entre workers estão disponíveis no core Python.
 - **Dados:** importar instâncias e exportar soluções em planilhas, salvar execuções em SQLite e reabrir resultados.
-- **Configuração de algoritmos:** GPR, EGO clássico/contextual, Random Search e integração opcional com SMAC3 e irace.
+- **Aprendizado de desempenho:** execuções persistidas alimentam um GPR que relaciona características da instância, parâmetros e perda observada, com previsão e incerteza.
+- **Configuração adaptativa:** EGO clássico e contextual, além de sugestões por instância a partir das observações disponíveis.
+- **Experimentos:** comparação com configuração padrão, Random Search, SMAC3 HPO/AC, irace, políticas por classe/kNN e ablações, com treino/validação/teste e estatística pareada.
 
 ## Executar localmente
 
@@ -55,18 +59,66 @@ O [guia de uso](docs/usage.md) cobre API, planilhas, paralelismo, campanhas e de
 
 ```mermaid
 flowchart LR
-    A[Instância e restrições] --> B[Ordem dos itens e rotações]
-    B --> C[Extreme Points]
-    C --> D[Validação geométrica e score]
-    D --> E[Simulated Annealing]
-    E --> B
-    D --> F[Solução, curva e visualização 3D]
-    F --> G[SQLite e observações]
-    G --> H[GPR e configuração via EGO]
-    H -. próximas execuções .-> E
+    subgraph Packing[Empacotamento]
+        A[Instância e restrições] --> B[SA: ordem e rotações]
+        B --> C[Extreme Points]
+        C --> D[Validação e avaliação]
+        D --> B
+        D --> E[Solução e visualização 3D]
+    end
+    subgraph Learning[Aprendizado e configuração]
+        F[SQLite: observações] --> G[GPR: desempenho e incerteza]
+        G --> H[EGO: escolha de configurações]
+    end
+    E -->|persist=true| F
+    H -. sugestão para nova execução .-> B
 ```
 
-O SA modifica a representação combinatória; o decoder escolhe as posições. O GPR aprende a relação entre instância, configuração e perda observada. Ele **não prevê diretamente coordenadas** nem garante melhoria em cada execução.
+O SA explora ordem e rotações; o decoder constrói os placements e a validação verifica as restrições. As execuções também podem gerar dados para modelar e configurar o desempenho do solver.
+
+## Aprendizado e configuração com GPR e EGO
+
+Quando uma execução é persistida, o sistema salva instância, parâmetros, seed, resultado e métricas em SQLite, cria uma observação de aprendizado e reajusta o modelo quando há dados suficientes. As observações usadas pertencem à mesma versão compatível do solver.
+
+O **GPR** estima a perda de uma configuração para uma instância e a incerteza dessa estimativa. A implementação usa um processo gaussiano com kernel **Matérn 5/2 ARD**, ruído por observação e ajuste de hiperparâmetros. O alvo padrão é o gap ao limite inferior acrescido de penalidade de falha; o tempo é reportado separadamente.
+
+O **EGO** usa essas previsões e o **Expected Improvement** para orientar quais configurações avaliar durante o tuning. O EGO clássico busca uma configuração global; o contextual também considera as características da instância. Nas campanhas, a política contextual é congelada após o treino e recomenda configurações para novas instâncias pela média posterior prevista.
+
+Na aplicação, o botão **Sugerir configuração (EGO)** e a API de sugestões consultam as observações disponíveis; durante o aquecimento, a sugestão é aleatória e sinalizada como tal. O aprendizado acontece entre execuções persistidas. O posicionamento dos itens continua a cargo do decoder e da busca.
+
+Detalhes: [GPR](docs/gpr.md), [EGO](docs/ego.md) e [aprendizado por execução](docs/aprendizado_online.md).
+
+## O que a aba Experimentos compara
+
+### Modos de execução
+
+O estudo de paralelismo compara **sequencial**, **pool independente** e **pool cooperativo** na instância selecionada, com múltiplas seeds e orçamento definido. A interface apresenta caixas, gap, tempo, avaliações por segundo e speedup em relação ao sequencial.
+
+O pool independente pode usar processos Python ou subprocessos C++. A cooperação usa memória central no core Python. Há também paralelismo de campanhas, que executa runs independentes de diferentes configurações/instâncias/seeds; esse é outro nível de execução, distinto do multi-start de um solve.
+
+**Parallel tempering** é um solver adicional disponível pela API/configuração, no core Python. Suas réplicas são intercaladas em um processo nesta implementação; ele não aparece como seletor específico nessa aba.
+
+### Campanhas de configuração
+
+A campanha compara estratégias de escolha dos parâmetros do **mesmo SA com Extreme Points**:
+
+| Método | Papel no experimento |
+|---|---|
+| Configuração fixa padrão | Referência sem tuning |
+| Random Search | Amostragem de configurações no espaço de busca |
+| EGO clássico | Configuração global com GP e Expected Improvement |
+| EGO contextual | Configuração por instância, considerando contexto e ruído entre seeds |
+| SMAC3 HPO | Otimização de hiperparâmetros com perda média sobre instâncias |
+| SMAC3 AC | Configuração de algoritmos com instâncias/features e racing |
+| irace | Configuração por iterated racing |
+| Por classe / kNN | Políticas simples de configuração por instância |
+| Ablações | Efeito do incumbente plug-in e do ajuste de hiperparâmetros do GP |
+
+SMAC3 e irace são configuradores de referência: eles escolhem parâmetros do solver de empacotamento. SMAC3 requer o extra Python `tuners`; irace requer R e o pacote correspondente. A campanha informa braços indisponíveis ou com erro.
+
+As campanhas usam datasets sintéticos ou o benchmark **MPV**, separação de treino/validação/teste, seeds distintas e orçamento controlado em avaliações e runs do solver. O relatório inclui **Wilcoxon pareado, correção de Holm, intervalos bootstrap e tamanho de efeito**. As seeds são agregadas antes do teste; no MPV, as classes dependentes são agrupadas por `(n, v)`.
+
+Campanhas já foram executadas com esses configuradores em versões anteriores. A repetição com o decoder da **0.3.0** faz parte da validação pendente. Veja o [protocolo experimental](docs/experiment_protocol.md) e o [estado científico](docs/status.md).
 
 ## Estado do projeto — 0.3.0
 
