@@ -1,6 +1,6 @@
 # Estado da distribuição
 
-Preparação em 16/11/2026: repositório novo, com histórico independente, inicialmente privado para revisão. A abertura pública e a escolha da licença permanecem pendentes de decisão do autor.
+Repositório disponibilizado publicamente em 16/11/2026 por solicitação do autor, com histórico independente. A escolha da licença de redistribuição permanece pendente.
 
 ## Conteúdo
 
@@ -10,7 +10,7 @@ O código tem como base a versão 0.3.0 do Adaptive 3D Bin Packing. A publicaç�
 
 ## Licença e procedência
 
-Nenhuma licença de redistribuição foi escolhida. O repositório privado foi preparado para revisão e não é anunciado como software open source já licenciado.
+Nenhuma licença de redistribuição foi escolhida. O código está disponível para consulta pública; o projeto não é anunciado como software open source já licenciado.
 
 O módulo `src/adaptive_3dbp/benchmarks/mpv.py` declara implementar independentemente o procedimento de geração MPV. O [código C original](https://hjemmesider.diku.dk/~pisinger/new3dbpp/readme.3dbpp) restringe seu uso a pesquisa e fins acadêmicos. Esse C original não é distribuído aqui. Antes de aplicar uma licença ao conjunto, é necessário confirmar a procedência da reimplementação e preservar os avisos aplicáveis de componentes de terceiros. Uma declaração no fonte não substitui essa conferência.
 
@@ -20,4 +20,4 @@ Referências científicas são mantidas como citações e links. Os agradeciment
 
 Validação local em 16/11/2026: 224 testes passaram, sem skips, com core C++ obrigatório e Python 3.14.3 (1 aviso de depreciação de dependência), em aproximadamente 72 s. A instalação limpa e o build do frontend passaram; npm reportou zero vulnerabilidades conhecidas. Os links locais e a seleção de arquivos foram conferidos. As campanhas confirmatórias da versão 0.3.0 continuam pendentes; a captura em vídeo não substitui os experimentos.
 
-A CI verifica Python 3.12/3.13 e Node 22 após o push. A varredura automatizada de formatos comuns de credenciais é limitada; não é uma certificação jurídica ou de segurança.
+As duas primeiras execuções da CI passaram, incluindo Python 3.12/3.13 e Node 22. A varredura automatizada de formatos comuns de credenciais é limitada; não é uma certificação jurídica ou de segurança.
