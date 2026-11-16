@@ -1,0 +1,10 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../artifacts:/app/artifacts
+

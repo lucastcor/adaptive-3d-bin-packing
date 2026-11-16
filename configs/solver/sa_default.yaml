@@ -1,0 +1,24 @@
+algorithm: simulated_annealing
+decoder: extreme_points
+placement_policy_id: min_z_y_x
+initial_temperature: null
+target_initial_acceptance: 0.82
+cooling_rate: 0.96
+iterations_per_temperature: 80
+min_temperature: 0.001
+max_evaluations: 2500
+time_limit_seconds: 10
+stagnation_limit: 600
+reheating_factor: 1.35
+multi_start_count: 3
+ruin_size: 4
+use_native_core: false
+parallel_mode: sequential
+parallel_workers: 1
+convergence_sample_rate: 1
+operator_probabilities:
+  swap: 0.32
+  relocate: 0.24
+  reverse: 0.14
+  rotate: 0.20
+  ruin_recreate: 0.10

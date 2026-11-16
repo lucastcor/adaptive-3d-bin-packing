@@ -1,0 +1,395 @@
+{
+  "instance_id": "medium-high-mixed-homogeneous-nodist-train-0-slot6",
+  "problem_type": "offline_3d_bpp",
+  "bin": {
+    "length": 100.0,
+    "width": 100.0,
+    "height": 100.0,
+    "max_weight": null
+  },
+  "items": [
+    {
+      "id": "item-000",
+      "length": 72.2,
+      "width": 34.02,
+      "height": 34.98,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-001",
+      "length": 67.69,
+      "width": 33.38,
+      "height": 32.48,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-002",
+      "length": 69.73,
+      "width": 32.9,
+      "height": 33.07,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-003",
+      "length": 67.85,
+      "width": 35.86,
+      "height": 33.17,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-004",
+      "length": 92.0,
+      "width": 33.67,
+      "height": 38.65,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-005",
+      "length": 69.54,
+      "width": 34.44,
+      "height": 34.04,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-006",
+      "length": 92.0,
+      "width": 33.99,
+      "height": 38.29,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-007",
+      "length": 92.0,
+      "width": 36.01,
+      "height": 39.69,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-008",
+      "length": 92.0,
+      "width": 36.86,
+      "height": 41.47,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-009",
+      "length": 92.0,
+      "width": 31.74,
+      "height": 36.1,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-010",
+      "length": 92.0,
+      "width": 35.86,
+      "height": 39.02,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-011",
+      "length": 92.0,
+      "width": 33.28,
+      "height": 35.73,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-012",
+      "length": 71.94,
+      "width": 34.32,
+      "height": 34.84,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-013",
+      "length": 71.78,
+      "width": 35.26,
+      "height": 33.64,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-014",
+      "length": 92.0,
+      "width": 36.04,
+      "height": 39.34,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-015",
+      "length": 73.76,
+      "width": 33.58,
+      "height": 34.82,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-016",
+      "length": 68.32,
+      "width": 35.41,
+      "height": 33.04,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-017",
+      "length": 92.0,
+      "width": 34.4,
+      "height": 38.78,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-018",
+      "length": 92.0,
+      "width": 34.78,
+      "height": 39.85,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-019",
+      "length": 92.0,
+      "width": 31.78,
+      "height": 36.94,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-020",
+      "length": 69.76,
+      "width": 35.15,
+      "height": 34.36,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-021",
+      "length": 72.53,
+      "width": 33.95,
+      "height": 34.96,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-022",
+      "length": 72.56,
+      "width": 34.29,
+      "height": 35.17,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-023",
+      "length": 69.64,
+      "width": 34.43,
+      "height": 33.33,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-024",
+      "length": 68.47,
+      "width": 34.92,
+      "height": 33.66,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-025",
+      "length": 92.0,
+      "width": 34.96,
+      "height": 40.55,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-026",
+      "length": 71.64,
+      "width": 33.98,
+      "height": 33.4,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-027",
+      "length": 71.88,
+      "width": 32.63,
+      "height": 35.11,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-028",
+      "length": 92.0,
+      "width": 34.48,
+      "height": 36.0,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-029",
+      "length": 92.0,
+      "width": 34.6,
+      "height": 35.86,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-030",
+      "length": 92.0,
+      "width": 34.91,
+      "height": 40.3,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-031",
+      "length": 92.0,
+      "width": 35.94,
+      "height": 40.71,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-032",
+      "length": 92.0,
+      "width": 33.97,
+      "height": 40.09,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-033",
+      "length": 92.0,
+      "width": 32.82,
+      "height": 38.2,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-034",
+      "length": 92.0,
+      "width": 34.26,
+      "height": 38.91,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-035",
+      "length": 67.4,
+      "width": 33.86,
+      "height": 33.21,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-036",
+      "length": 72.23,
+      "width": 34.82,
+      "height": 34.55,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-037",
+      "length": 68.71,
+      "width": 34.6,
+      "height": 32.44,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-038",
+      "length": 68.32,
+      "width": 35.76,
+      "height": 33.16,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-039",
+      "length": 92.0,
+      "width": 34.26,
+      "height": 39.27,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-040",
+      "length": 92.0,
+      "width": 32.21,
+      "height": 37.17,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-041",
+      "length": 92.0,
+      "width": 33.85,
+      "height": 38.27,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-042",
+      "length": 67.99,
+      "width": 35.57,
+      "height": 35.03,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-043",
+      "length": 92.0,
+      "width": 33.04,
+      "height": 40.21,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-044",
+      "length": 71.85,
+      "width": 34.68,
+      "height": 35.32,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-045",
+      "length": 70.42,
+      "width": 35.06,
+      "height": 34.42,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-046",
+      "length": 70.64,
+      "width": 32.77,
+      "height": 33.89,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    }
+  ],
+  "constraints": {
+    "orthogonal_only": true,
+    "stability_required": false,
+    "support_ratio_min": null,
+    "min_distance": []
+  },
+  "best_known_bins": null
+}

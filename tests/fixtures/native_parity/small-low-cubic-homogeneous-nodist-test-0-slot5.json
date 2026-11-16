@@ -1,0 +1,99 @@
+{
+  "instance_id": "small-low-cubic-homogeneous-nodist-test-0-slot5",
+  "problem_type": "offline_3d_bpp",
+  "bin": {
+    "length": 100.0,
+    "width": 100.0,
+    "height": 100.0,
+    "max_weight": null
+  },
+  "items": [
+    {
+      "id": "item-000",
+      "length": 50.43,
+      "width": 46.59,
+      "height": 56.29,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-001",
+      "length": 54.49,
+      "width": 44.13,
+      "height": 54.35,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-002",
+      "length": 77.85,
+      "width": 70.12,
+      "height": 84.73,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-003",
+      "length": 27.13,
+      "width": 26.07,
+      "height": 27.27,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-004",
+      "length": 51.91,
+      "width": 45.46,
+      "height": 53.62,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-005",
+      "length": 79.66,
+      "width": 68.6,
+      "height": 86.82,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-006",
+      "length": 49.81,
+      "width": 44.16,
+      "height": 55.86,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-007",
+      "length": 26.2,
+      "width": 27.33,
+      "height": 27.88,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-008",
+      "length": 83.05,
+      "width": 72.59,
+      "height": 89.16,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-009",
+      "length": 78.95,
+      "width": 75.26,
+      "height": 89.85,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    }
+  ],
+  "constraints": {
+    "orthogonal_only": true,
+    "stability_required": false,
+    "support_ratio_min": null,
+    "min_distance": []
+  },
+  "best_known_bins": null
+}

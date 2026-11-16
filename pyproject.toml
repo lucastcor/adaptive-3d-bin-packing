@@ -1,0 +1,35 @@
+[project]
+name = "adaptive-3dbp"
+version = "0.3.0"
+description = "Adaptive offline 3D bin packing solver with Extreme Points, Simulated Annealing and Bayesian configuration scaffolding."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Lucas Teixeira Correia" }]
+dependencies = [
+  "fastapi>=0.115",
+  "numpy>=2.0",
+  "openpyxl>=3.1",
+  "psutil>=5.9",
+  "pydantic>=2.8",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+tuners = ["smac>=2.1", "ConfigSpace>=0.7", "scikit-learn<1.9"]
+plots = ["matplotlib>=3.8"]
+
+[project.scripts]
+adaptive-3dbp = "adaptive_3dbp.cli.main:main"
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,53 @@
+# RASCUNHO DE DESIGN — não é lido por nenhum código (21/10/2026).
+# As campanhas reais usam os JSON desta pasta (pilot.json, extended.json) via
+# `adaptive_3dbp.experiments.campaign.run_campaign`. Mantido só como registro
+# do desenho original (LHS, lotes, replicações adaptativas ainda não implementados).
+campaign:
+  id: sa-noisy-contextual-ego-v1
+  seed: 20260610
+
+dataset:
+  train_manifest: data/processed/train.json
+  validation_manifest: data/processed/validation.json
+  test_manifest: data/processed/test.json
+
+solver:
+  algorithm: simulated_annealing
+  decoder: extreme_points
+  constructors:
+    - volume_desc
+    - max_dimension_desc
+    - randomized
+
+budget:
+  type: evaluations
+  value: 50000
+  timeout_seconds: 30
+
+replications:
+  initial: 3
+  max: 10
+  adaptive: true
+
+configurator:
+  name: noisy_contextual_ego
+  initial_design:
+    method: latin_hypercube
+    size: 32
+  acquisition:
+    name: noisy_expected_improvement
+    batch_size: 8
+  surrogate:
+    type: exact_gp
+    kernel: matern_5_2_ard
+    normalize_inputs: true
+    standardize_targets: true
+
+parallelism:
+  workers: 8
+  threads_per_worker: 1
+
+storage:
+  database_url: sqlite:///artifacts/experiments.db
+  artifact_root: artifacts/
+

@@ -1,0 +1,54 @@
+.DS_Store
+# Private research archive and publication staging (never publish).
+.private/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+Vault Adaptive 3DBP/
+docs/articles/
+docs/artigo_latex/
+docs/guia_didatico/
+docs/*.docx
+artifacts/
+data/datasets/
+# Claude Code: local settings stay private; project agents are versioned
+.claude/*
+!.claude/agents/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+build/
+*.egg-info/
+*.tsbuildinfo
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.db
+*.sqlite
+# LaTeX build artifacts (keep the PDFs, drop intermediates)
+docs/artigo_latex/*.aux
+docs/artigo_latex/*.log
+docs/artigo_latex/*.out
+docs/artigo_latex/*.toc
+docs/artigo_latex/*.fls
+docs/artigo_latex/*.fdb_latexmk
+docs/guia_didatico/*.aux
+docs/guia_didatico/*.log
+docs/guia_didatico/*.out
+docs/guia_didatico/*.toc
+# Runtime state and generated artifacts
+artifacts/logs/
+artifacts/pids/
+artifacts/bin/
+artifacts/campaigns/_jobs/
+artifacts/models/online_gpr_run_*
+smac3_output/
+# Per-run placements: can reach GBs (GitHub rejects files >100 MB).
+# Archive them outside git (Release/Zenodo) when needed.
+artifacts/campaigns/*/solutions.jsonl
+# Obsidian per-user UI state
+Vault Adaptive 3DBP/.obsidian/workspace.json

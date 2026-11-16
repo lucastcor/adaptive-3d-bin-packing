@@ -1,0 +1,12 @@
+{
+  "target_initial_acceptance": { "type": "float", "low": 0.55, "high": 0.95 },
+  "cooling_rate": { "type": "float", "low": 0.88, "high": 0.995 },
+  "iterations_per_temperature": { "type": "int", "low": 20, "high": 500, "log": true },
+  "stagnation_limit": { "type": "int", "low": 100, "high": 5000, "log": true },
+  "ruin_size": { "type": "int", "low": 1, "high": 12 },
+  "multi_start_count": { "type": "int", "low": 1, "high": 8 },
+  "operator_probabilities": {
+    "type": "simplex",
+    "operators": ["swap", "relocate", "reverse", "rotate", "ruin_recreate"]
+  }
+}

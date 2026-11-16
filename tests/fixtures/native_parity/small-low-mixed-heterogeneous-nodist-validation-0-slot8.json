@@ -1,0 +1,107 @@
+{
+  "instance_id": "small-low-mixed-heterogeneous-nodist-validation-0-slot8",
+  "problem_type": "offline_3d_bpp",
+  "bin": {
+    "length": 100.0,
+    "width": 100.0,
+    "height": 100.0,
+    "max_weight": null
+  },
+  "items": [
+    {
+      "id": "item-000",
+      "length": 72.99,
+      "width": 33.34,
+      "height": 36.21,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-001",
+      "length": 83.05,
+      "width": 92.0,
+      "height": 72.69,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-002",
+      "length": 92.0,
+      "width": 30.12,
+      "height": 29.66,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-003",
+      "length": 91.18,
+      "width": 32.32,
+      "height": 38.52,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-004",
+      "length": 92.0,
+      "width": 44.31,
+      "height": 36.75,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-005",
+      "length": 82.05,
+      "width": 36.49,
+      "height": 29.53,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-006",
+      "length": 80.09,
+      "width": 91.25,
+      "height": 86.26,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-007",
+      "length": 92.0,
+      "width": 28.93,
+      "height": 27.46,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-008",
+      "length": 92.0,
+      "width": 34.97,
+      "height": 37.89,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-009",
+      "length": 70.38,
+      "width": 82.73,
+      "height": 76.92,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-010",
+      "length": 92.0,
+      "width": 31.32,
+      "height": 35.95,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    }
+  ],
+  "constraints": {
+    "orthogonal_only": true,
+    "stability_required": false,
+    "support_ratio_min": null,
+    "min_distance": []
+  },
+  "best_known_bins": null
+}

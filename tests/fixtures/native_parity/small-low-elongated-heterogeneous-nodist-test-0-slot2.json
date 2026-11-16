@@ -1,0 +1,179 @@
+{
+  "instance_id": "small-low-elongated-heterogeneous-nodist-test-0-slot2",
+  "problem_type": "offline_3d_bpp",
+  "bin": {
+    "length": 100.0,
+    "width": 100.0,
+    "height": 100.0,
+    "max_weight": null
+  },
+  "items": [
+    {
+      "id": "item-000",
+      "length": 92.0,
+      "width": 36.94,
+      "height": 30.43,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-001",
+      "length": 92.0,
+      "width": 42.93,
+      "height": 41.82,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-002",
+      "length": 90.47,
+      "width": 31.36,
+      "height": 29.94,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-003",
+      "length": 92.0,
+      "width": 40.84,
+      "height": 49.31,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-004",
+      "length": 92.0,
+      "width": 41.83,
+      "height": 32.83,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-005",
+      "length": 92.0,
+      "width": 34.86,
+      "height": 26.78,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-006",
+      "length": 92.0,
+      "width": 27.28,
+      "height": 23.58,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-007",
+      "length": 92.0,
+      "width": 19.09,
+      "height": 21.29,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-008",
+      "length": 92.0,
+      "width": 41.82,
+      "height": 46.76,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-009",
+      "length": 92.0,
+      "width": 22.16,
+      "height": 28.61,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-010",
+      "length": 92.0,
+      "width": 20.64,
+      "height": 18.76,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-011",
+      "length": 92.0,
+      "width": 38.89,
+      "height": 46.96,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-012",
+      "length": 92.0,
+      "width": 21.97,
+      "height": 21.29,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-013",
+      "length": 92.0,
+      "width": 40.56,
+      "height": 37.34,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-014",
+      "length": 92.0,
+      "width": 44.87,
+      "height": 37.81,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-015",
+      "length": 92.0,
+      "width": 41.52,
+      "height": 39.77,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-016",
+      "length": 92.0,
+      "width": 37.8,
+      "height": 37.16,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-017",
+      "length": 92.0,
+      "width": 28.66,
+      "height": 31.25,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-018",
+      "length": 92.0,
+      "width": 27.17,
+      "height": 22.65,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    },
+    {
+      "id": "item-019",
+      "length": 92.0,
+      "width": 55.17,
+      "height": 39.62,
+      "weight": null,
+      "allowed_rotations": "all_orthogonal"
+    }
+  ],
+  "constraints": {
+    "orthogonal_only": true,
+    "stability_required": false,
+    "support_ratio_min": null,
+    "min_distance": []
+  },
+  "best_known_bins": null
+}

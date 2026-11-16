@@ -1,0 +1,33 @@
+{
+  "campaign_id": "pilot-001",
+  "dataset": {
+    "generate": {
+      "per_class": {
+        "train": 1,
+        "validation": 1,
+        "test": 1
+      },
+      "seed": 7,
+      "include_min_distance": false,
+      "classes_limit": 3
+    }
+  },
+  "seeds": [
+    11,
+    23
+  ],
+  "trials": 12,
+  "tuner_seed": 0,
+  "budget": {
+    "max_evaluations": 1200,
+    "time_limit_seconds": 72.0
+  },
+  "tuners": [
+    "fixed_default",
+    "random_search",
+    "classic_ego",
+    "noisy_contextual_ego"
+  ],
+  "ablations": true,
+  "persist": false
+}

@@ -1,0 +1,46 @@
+{
+  "campaign_id": "mpv-pilot-001",
+  "_comment": "Piloto no benchmark de Martello, Pisinger e Vigo (2000), orientação fixa como nas tabelas publicadas (docs/benchmark_mpv.md). Classes 1 e 4-8, n=50. Teste = as 10 instâncias canônicas (v=1-10), treino v=11-20, validação v=21-25; unidade estatística = (n, v). Determinístico: nenhum run do solver escolhe instâncias. native_core=true (paridade C++/Python testada em tests/unit/test_native_parity.py). time_limit_seconds é só teto de segurança. Rode com a árvore git limpa.",
+  "dataset": {
+    "benchmark": {
+      "name": "mpv",
+      "classes": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sizes": [
+        50
+      ],
+      "rotations": "fixed"
+    }
+  },
+  "seeds": [
+    11,
+    23,
+    47
+  ],
+  "trials": 20,
+  "tuner_seed": 0,
+  "budget": {
+    "max_evaluations": 3000,
+    "time_limit_seconds": 900.0,
+    "temperature_calibration_samples": 24,
+    "native_core": true
+  },
+  "tuners": [
+    "fixed_default",
+    "random_search",
+    "classic_ego",
+    "noisy_contextual_ego",
+    "smac3",
+    "smac3_ac",
+    "irace"
+  ],
+  "per_instance_baselines": true,
+  "ablations": true,
+  "persist": false
+}
